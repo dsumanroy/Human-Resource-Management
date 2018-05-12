@@ -396,6 +396,76 @@ var SereneCustomize;
 })(SereneCustomize || (SereneCustomize = {}));
 var SereneCustomize;
 (function (SereneCustomize) {
+    var Default;
+    (function (Default) {
+        var DesignationForm = /** @class */ (function (_super) {
+            __extends(DesignationForm, _super);
+            function DesignationForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            DesignationForm.formKey = 'Default.Designation';
+            return DesignationForm;
+        }(Serenity.PrefixedContext));
+        Default.DesignationForm = DesignationForm;
+        [,
+            ['Name', function () { return Serenity.StringEditor; }],
+            ['Remarks', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(DesignationForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
+    var Default;
+    (function (Default) {
+        var DesignationRow;
+        (function (DesignationRow) {
+            DesignationRow.idProperty = 'Id';
+            DesignationRow.nameProperty = 'Name';
+            DesignationRow.localTextPrefix = 'Default.Designation';
+            var Fields;
+            (function (Fields) {
+            })(Fields = DesignationRow.Fields || (DesignationRow.Fields = {}));
+            [
+                'Id',
+                'Name',
+                'Remarks'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(DesignationRow = Default.DesignationRow || (Default.DesignationRow = {}));
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
+    var Default;
+    (function (Default) {
+        var DesignationService;
+        (function (DesignationService) {
+            DesignationService.baseUrl = 'Default/Designation';
+            var Methods;
+            (function (Methods) {
+            })(Methods = DesignationService.Methods || (DesignationService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                DesignationService[x] = function (r, s, o) {
+                    return Q.serviceRequest(DesignationService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = DesignationService.baseUrl + '/' + x;
+            });
+        })(DesignationService = Default.DesignationService || (Default.DesignationService = {}));
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
     var Membership;
     (function (Membership) {
         var ChangePasswordForm = /** @class */ (function (_super) {
@@ -2684,6 +2754,52 @@ var SereneCustomize;
             return DailyAttendanceGrid;
         }(Serenity.EntityGrid));
         Default.DailyAttendanceGrid = DailyAttendanceGrid;
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
+    var Default;
+    (function (Default) {
+        var DesignationDialog = /** @class */ (function (_super) {
+            __extends(DesignationDialog, _super);
+            function DesignationDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Default.DesignationForm(_this.idPrefix);
+                return _this;
+            }
+            DesignationDialog.prototype.getFormKey = function () { return Default.DesignationForm.formKey; };
+            DesignationDialog.prototype.getIdProperty = function () { return Default.DesignationRow.idProperty; };
+            DesignationDialog.prototype.getLocalTextPrefix = function () { return Default.DesignationRow.localTextPrefix; };
+            DesignationDialog.prototype.getNameProperty = function () { return Default.DesignationRow.nameProperty; };
+            DesignationDialog.prototype.getService = function () { return Default.DesignationService.baseUrl; };
+            DesignationDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DesignationDialog);
+            return DesignationDialog;
+        }(Serenity.EntityDialog));
+        Default.DesignationDialog = DesignationDialog;
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
+    var Default;
+    (function (Default) {
+        var DesignationGrid = /** @class */ (function (_super) {
+            __extends(DesignationGrid, _super);
+            function DesignationGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            DesignationGrid.prototype.getColumnsKey = function () { return 'Default.Designation'; };
+            DesignationGrid.prototype.getDialogType = function () { return Default.DesignationDialog; };
+            DesignationGrid.prototype.getIdProperty = function () { return Default.DesignationRow.idProperty; };
+            DesignationGrid.prototype.getLocalTextPrefix = function () { return Default.DesignationRow.localTextPrefix; };
+            DesignationGrid.prototype.getService = function () { return Default.DesignationService.baseUrl; };
+            DesignationGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DesignationGrid);
+            return DesignationGrid;
+        }(Serenity.EntityGrid));
+        Default.DesignationGrid = DesignationGrid;
     })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
 })(SereneCustomize || (SereneCustomize = {}));
 var SereneCustomize;

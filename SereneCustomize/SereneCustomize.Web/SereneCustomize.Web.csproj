@@ -1567,6 +1567,12 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <Content Include="Content\site\site.default.less" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.DesignationRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.DesignationService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <Content Include="Modules\Default\Designation\DesignationIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Default\Designation\DesignationDialog.ts" />
+    <TypeScriptCompile Include="Modules\Default\Designation\DesignationGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.DesignationForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1585,6 +1591,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DefaultDB\DefaultDB_20180511_114500_DailyAttendance.cs" />
+    <Compile Include="Migrations\DefaultDB\DefaultDB_20180511_172500_Designation.cs" />
     <Compile Include="Modules\Administration\AdministrationNavigation.cs" />
     <Compile Include="Modules\Administration\Language\LanguageLookup.cs" />
     <Compile Include="Modules\Administration\RolePermission\RolePermissionUpdateRequest.cs" />
@@ -1708,6 +1715,12 @@
     <Compile Include="Modules\Default\DailyAttendance\DailyAttendanceColumns.cs" />
     <Compile Include="Modules\Default\DailyAttendance\DailyAttendanceForm.cs" />
     <Compile Include="Modules\Default\DefaultNavigation.cs" />
+    <Compile Include="Modules\Default\Designation\DesignationRow.cs" />
+    <Compile Include="Modules\Default\Designation\DesignationRepository.cs" />
+    <Compile Include="Modules\Default\Designation\DesignationEndpoint.cs" />
+    <Compile Include="Modules\Default\Designation\DesignationPage.cs" />
+    <Compile Include="Modules\Default\Designation\DesignationColumns.cs" />
+    <Compile Include="Modules\Default\Designation\DesignationForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

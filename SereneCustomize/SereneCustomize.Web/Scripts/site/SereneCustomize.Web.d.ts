@@ -492,6 +492,49 @@ declare namespace SereneCustomize.Default {
         }
     }
 }
+declare namespace SereneCustomize.Default {
+    class DesignationForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface DesignationForm {
+        Name: Serenity.StringEditor;
+        Remarks: Serenity.StringEditor;
+    }
+}
+declare namespace SereneCustomize.Default {
+    interface DesignationRow {
+        Id?: number;
+        Name?: string;
+        Remarks?: string;
+    }
+    namespace DesignationRow {
+        const idProperty = "Id";
+        const nameProperty = "Name";
+        const localTextPrefix = "Default.Designation";
+        namespace Fields {
+            const Id: any;
+            const Name: any;
+            const Remarks: any;
+        }
+    }
+}
+declare namespace SereneCustomize.Default {
+    namespace DesignationService {
+        const baseUrl = "Default/Designation";
+        function Create(request: Serenity.SaveRequest<DesignationRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DesignationRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DesignationRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DesignationRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
 declare namespace SereneCustomize {
     interface ExcelImportRequest extends Serenity.ServiceRequest {
         FileName?: string;
@@ -1051,6 +1094,26 @@ declare namespace SereneCustomize.Default {
     class DailyAttendanceGrid extends Serenity.EntityGrid<DailyAttendanceRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof DailyAttendanceDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace SereneCustomize.Default {
+    class DesignationDialog extends Serenity.EntityDialog<DesignationRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: DesignationForm;
+    }
+}
+declare namespace SereneCustomize.Default {
+    class DesignationGrid extends Serenity.EntityGrid<DesignationRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof DesignationDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;

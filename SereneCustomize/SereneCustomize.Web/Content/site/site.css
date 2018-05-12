@@ -7464,3 +7464,9 @@ section.content > .s-DataGrid {
 .s-Default-DailyAttendanceDialog .caption {
   width: 150px;
 }
+.s-Default-DesignationDialog > .size {
+  width: 650px;
+}
+.s-Default-DesignationDialog .caption {
+  width: 150px;
+}
