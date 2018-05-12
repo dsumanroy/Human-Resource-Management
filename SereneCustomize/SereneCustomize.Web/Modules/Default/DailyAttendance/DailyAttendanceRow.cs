@@ -11,8 +11,8 @@ namespace SereneCustomize.Default.Entities
 
     [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[DailyAttendance]")]
     [DisplayName("Daily Attendance"), InstanceName("Daily Attendance")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission("*")]
+    [ModifyPermission("*")]
     public sealed class DailyAttendanceRow : Row, IIdRow
     {
         [DisplayName("Id"), Identity]
