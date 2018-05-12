@@ -422,8 +422,8 @@ declare namespace SereneCustomize.Default {
 }
 declare namespace SereneCustomize.Default {
     interface DailyAttendanceForm {
-        UserId: Serenity.IntegerEditor;
-        AttendanceDate: Serenity.DateEditor;
+        UserId: Serenity.LookupEditor;
+        AttendanceDate: Serenity.DateTimeEditor;
     }
     class DailyAttendanceForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -481,12 +481,14 @@ declare namespace SereneCustomize.Default {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DailyAttendanceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DailyAttendanceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function setAttendance(request: Serenity.SaveRequest<DailyAttendanceRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "Default/DailyAttendance/Create",
             Update = "Default/DailyAttendance/Update",
             Delete = "Default/DailyAttendance/Delete",
             Retrieve = "Default/DailyAttendance/Retrieve",
             List = "Default/DailyAttendance/List",
+            setAttendance = "Default/DailyAttendance/setAttendance",
         }
     }
 }

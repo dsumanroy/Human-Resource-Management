@@ -10,5 +10,6 @@ namespace SereneCustomize.Default {
 
         protected form = new DailyAttendanceForm(this.idPrefix);
 
+
     }
 }

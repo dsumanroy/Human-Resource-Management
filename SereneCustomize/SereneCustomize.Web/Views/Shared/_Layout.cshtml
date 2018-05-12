@@ -110,15 +110,14 @@
                     </section>
                 }
                 <section class="content">
-                    @if (user.ClockButtonText != null)
-                    {
-                        <div class="panel panel-default bg-navy">
-                            <div class="panel-body text-center">
-                                <i class="glyphicon glyphicon-map-marker pull-left"></i>
-                                <strong>Today  </strong>@DateTime.Now.ToString("D")  @user.strClockTime <button class="btn btn-primary" id="btnSetTimeSheet"> @user.ClockButtonText</button>
-                            </div>
+
+                    <div class="panel panel-default bg-navy">
+                        <div class="panel-body text-center">
+                            <i class="glyphicon glyphicon-map-marker pull-left"></i>
+                            <strong>Today  </strong>@DateTime.Now.ToString("D") <button class="btn btn-primary" id="btnSetTimeSheet">CLOCK @(user.IsClockIn ? "OUT" : "IN")</button>
                         </div>
-                    }
+                    </div>
+
                     @RenderBody()
                 </section>
             </div>
@@ -176,8 +175,9 @@
                 $("#btnSetTimeSheet").click(function () {
                     console.log("attendance btn working");
 
-                    SereneCustomize.HRM.AmsAttenanceService.Create({ Entity: { EmployeeId: 1, AttendanceDate: new Date() } }, p => {
+                    SereneCustomize.Default.DailyAttendanceService.setAttendance({ Entity: { UserId: @user.UserId, AttendanceDate: new Date() } }, p => {
                         Q.notifySuccess('Attendance completed.');
+                        location.reload();
                     });
 
                 });

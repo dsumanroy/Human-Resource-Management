@@ -1,6 +1,7 @@
 ﻿
 namespace SereneCustomize.Default.Entities
 {
+    using Administration.Entities;
     using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
@@ -23,13 +24,14 @@ namespace SereneCustomize.Default.Entities
         }
 
         [DisplayName("User"), NotNull, ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jUser"), TextualField("UserUsername")]
+        [LookupEditor(typeof(UserRow))]
         public Int32? UserId
         {
             get { return Fields.UserId[this]; }
             set { Fields.UserId[this] = value; }
         }
 
-        [DisplayName("Attendance Date"), NotNull]
+        [DisplayName("Attendance Date"), NotNull, DateTimeEditor, DateTimeFormatter]
         public DateTime? AttendanceDate
         {
             get { return Fields.AttendanceDate[this]; }
@@ -158,6 +160,6 @@ namespace SereneCustomize.Default.Entities
             public DateTimeField UserUpdateDate;
             public Int32Field UserUpdateUserId;
             public Int16Field UserIsActive;
-		}
+        }
     }
 }

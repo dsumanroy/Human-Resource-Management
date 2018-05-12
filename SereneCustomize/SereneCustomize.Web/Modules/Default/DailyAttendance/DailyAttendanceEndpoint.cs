@@ -42,5 +42,13 @@ namespace SereneCustomize.Default.Endpoints
         {
             return new MyRepository().List(connection, request);
         }
+
+        [HttpPost, AuthorizeCreate(typeof(MyRow))]
+        public SaveResponse setAttendance(IUnitOfWork uow, SaveRequest<MyRow> request)
+        {
+            var userD = Authorization.UserDefinition as UserDefinition;
+            userD.IsClockIn = !userD.IsClockIn;
+            return new MyRepository().Create(uow, request);
+        }
     }
 }

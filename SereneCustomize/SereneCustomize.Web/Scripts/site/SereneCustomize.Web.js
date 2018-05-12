@@ -1,4 +1,4 @@
-ï»¿var SereneCustomize;
+var SereneCustomize;
 (function (SereneCustomize) {
     var Administration;
     (function (Administration) {
@@ -346,8 +346,8 @@ var SereneCustomize;
                 if (!DailyAttendanceForm.init) {
                     DailyAttendanceForm.init = true;
                     var s = Serenity;
-                    var w0 = s.IntegerEditor;
-                    var w1 = s.DateEditor;
+                    var w0 = s.LookupEditor;
+                    var w1 = s.DateTimeEditor;
                     Q.initFormType(DailyAttendanceForm, [
                         'UserId', w0,
                         'AttendanceDate', w1
@@ -384,7 +384,8 @@ var SereneCustomize;
                 'Update',
                 'Delete',
                 'Retrieve',
-                'List'
+                'List',
+                'setAttendance'
             ].forEach(function (x) {
                 DailyAttendanceService[x] = function (r, s, o) {
                     return Q.serviceRequest(DailyAttendanceService.baseUrl + '/' + x, r, s, o);

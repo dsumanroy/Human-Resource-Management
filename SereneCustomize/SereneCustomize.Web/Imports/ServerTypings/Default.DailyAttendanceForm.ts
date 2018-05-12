@@ -1,7 +1,7 @@
 ﻿namespace SereneCustomize.Default {
     export interface DailyAttendanceForm {
-        UserId: Serenity.IntegerEditor;
-        AttendanceDate: Serenity.DateEditor;
+        UserId: Serenity.LookupEditor;
+        AttendanceDate: Serenity.DateTimeEditor;
     }
 
     export class DailyAttendanceForm extends Serenity.PrefixedContext {
@@ -15,8 +15,8 @@
                 DailyAttendanceForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.IntegerEditor;
-                var w1 = s.DateEditor;
+                var w0 = s.LookupEditor;
+                var w1 = s.DateTimeEditor;
 
                 Q.initFormType(DailyAttendanceForm, [
                     'UserId', w0,
