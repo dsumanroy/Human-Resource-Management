@@ -39,61 +39,21 @@ namespace MVC
             {
                 public const string ReportPage = "~/Modules/Common/Reporting/ReportPage.cshtml";
             }
+
+        }
+
+        public static class Default
+        {
+            public static class DailyAttendance
+            {
+                public const string DailyAttendanceIndex = "~/Modules/Default/DailyAttendance/DailyAttendanceIndex.cshtml";
+            }
         }
 
         public static class Errors
         {
             public const string AccessDenied = "~/Views/Errors/AccessDenied.cshtml";
             public const string ValidationError = "~/Views/Errors/ValidationError.cshtml";
-        }
-
-        public static class HRM
-        {
-            public static class AmsAttenance
-            {
-                public const string AmsAttenanceIndex = "~/Modules/HRM/AmsAttenance/AmsAttenanceIndex.cshtml";
-            }
-
-            public static class HrmEmployeeSalary
-            {
-                public const string HrmEmployeeSalaryIndex = "~/Modules/HRM/HrmEmployeeSalary/HrmEmployeeSalaryIndex.cshtml";
-            }
-
-            public static class HrmEmployeeSalaryDetails
-            {
-                public const string HrmEmployeeSalaryDetailsIndex = "~/Modules/HRM/HrmEmployeeSalaryDetails/HrmEmployeeSalaryDetailsIndex.cshtml";
-            }
-
-            public static class HrmSalaryComponent
-            {
-                public const string HrmSalaryComponentIndex = "~/Modules/HRM/HrmSalaryComponent/HrmSalaryComponentIndex.cshtml";
-            }
-
-            public static class HrmSalaryProcess
-            {
-                public const string HrmSalaryProcessIndex = "~/Modules/HRM/HrmSalaryProcess/HrmSalaryProcessIndex.cshtml";
-            }
-
-            public static class HrmSalaryTemplate
-            {
-                public const string HrmSalaryTemplateIndex = "~/Modules/HRM/HrmSalaryTemplate/HrmSalaryTemplateIndex.cshtml";
-            }
-
-            public static class HrmSalaryTemplateDetails
-            {
-                public const string HrmSalaryTemplateDetailsIndex = "~/Modules/HRM/HrmSalaryTemplateDetails/HrmSalaryTemplateDetailsIndex.cshtml";
-            }
-
-            public static class PrmDesignation
-            {
-                public const string PrmDesignationIndex = "~/Modules/HRM/PrmDesignation/PrmDesignationIndex.cshtml";
-            }
-
-            public static class PrmEmploymentInfo
-            {
-                public const string PrmEmploymentInfoIndex = "~/Modules/HRM/PrmEmploymentInfo/PrmEmploymentInfoIndex.cshtml";
-            }
-
         }
 
         public static class Membership

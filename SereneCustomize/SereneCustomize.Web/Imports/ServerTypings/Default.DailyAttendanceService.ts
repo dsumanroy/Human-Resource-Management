@@ -1,5 +1,4 @@
-﻿
-namespace SereneCustomize.Default {
+﻿namespace SereneCustomize.Default {
     export namespace DailyAttendanceService {
         export const baseUrl = 'Default/DailyAttendance';
 
@@ -9,12 +8,12 @@ namespace SereneCustomize.Default {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DailyAttendanceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DailyAttendanceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "Default/DailyAttendance/Create",
+            Update = "Default/DailyAttendance/Update",
+            Delete = "Default/DailyAttendance/Delete",
+            Retrieve = "Default/DailyAttendance/Retrieve",
+            List = "Default/DailyAttendance/List"
         }
 
         [
@@ -24,10 +23,10 @@ namespace SereneCustomize.Default {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>DailyAttendanceService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>DailyAttendanceService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+

@@ -869,33 +869,6 @@
     <Content Include="tools\Node\lessc.cmd" />
     <Content Include="tools\JsEngine\lib.d.ts_" />
     <None Include="tsconfig.json" />
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.AmsAttenanceColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmEmployeeSalaryColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmEmployeeSalaryDetailsColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryComponentColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryProcessColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryTemplateColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryTemplateDetailsColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.PrmDesignationColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.PrmEmploymentInfoColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
     <Content Include="Content\site\images\accordion-arrows.png" />
     <Content Include="Modules\Membership\Account\SignUp\AccountSignUp.AdminLTE.cshtml" />
     <Content Include="Imports\Web.config" />
@@ -1349,6 +1322,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Content>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.DailyAttendanceColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Common\Helpers\StaticTextBlock.ts" />
     <TypeScriptCompile Include="Modules\Administration\Language\LanguageDialog.ts" />
     <TypeScriptCompile Include="Modules\Administration\Language\LanguageGrid.ts" />
@@ -1577,115 +1553,7 @@
     <TypeScriptCompile Include="node_modules\%40types\sortablejs\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\toastr\index.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\serenity\Serenity.CoreLib.d.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.AmsAttenanceRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.AmsAttenanceService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <Content Include="Modules\HRM\AmsAttenance\AmsAttenanceIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\HRM\AmsAttenance\AmsAttenanceDialog.ts" />
-    <TypeScriptCompile Include="Modules\HRM\AmsAttenance\AmsAttenanceGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.AmsAttenanceForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
     <Content Include="Content\site\site.hrm.less" />
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.PrmDesignationRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.PrmDesignationService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <Content Include="Modules\HRM\PrmDesignation\PrmDesignationIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\HRM\PrmDesignation\PrmDesignationDialog.ts" />
-    <TypeScriptCompile Include="Modules\HRM\PrmDesignation\PrmDesignationGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.PrmDesignationForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.PrmEmploymentInfoRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.PrmEmploymentInfoService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <Content Include="Modules\HRM\PrmEmploymentInfo\PrmEmploymentInfoIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\HRM\PrmEmploymentInfo\PrmEmploymentInfoDialog.ts" />
-    <TypeScriptCompile Include="Modules\HRM\PrmEmploymentInfo\PrmEmploymentInfoGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.PrmEmploymentInfoForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmEmployeeSalaryRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmEmployeeSalaryService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <Content Include="Modules\HRM\HrmEmployeeSalary\HrmEmployeeSalaryIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\HRM\HrmEmployeeSalary\HrmEmployeeSalaryDialog.ts" />
-    <TypeScriptCompile Include="Modules\HRM\HrmEmployeeSalary\HrmEmployeeSalaryGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmEmployeeSalaryForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmEmployeeSalaryDetailsRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmEmployeeSalaryDetailsService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <Content Include="Modules\HRM\HrmEmployeeSalaryDetails\HrmEmployeeSalaryDetailsIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\HRM\HrmEmployeeSalaryDetails\HrmEmployeeSalaryDetailsDialog.ts" />
-    <TypeScriptCompile Include="Modules\HRM\HrmEmployeeSalaryDetails\HrmEmployeeSalaryDetailsGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmEmployeeSalaryDetailsForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryComponentRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryComponentService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <Content Include="Modules\HRM\HrmSalaryComponent\HrmSalaryComponentIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\HRM\HrmSalaryComponent\HrmSalaryComponentDialog.ts" />
-    <TypeScriptCompile Include="Modules\HRM\HrmSalaryComponent\HrmSalaryComponentGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryComponentForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryProcessRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryProcessService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <Content Include="Modules\HRM\HrmSalaryProcess\HrmSalaryProcessIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\HRM\HrmSalaryProcess\HrmSalaryProcessDialog.ts" />
-    <TypeScriptCompile Include="Modules\HRM\HrmSalaryProcess\HrmSalaryProcessGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryProcessForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryTemplateRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryTemplateService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <Content Include="Modules\HRM\HrmSalaryTemplate\HrmSalaryTemplateIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\HRM\HrmSalaryTemplate\HrmSalaryTemplateDialog.ts" />
-    <TypeScriptCompile Include="Modules\HRM\HrmSalaryTemplate\HrmSalaryTemplateGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryTemplateForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryTemplateDetailsRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryTemplateDetailsService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <Content Include="Modules\HRM\HrmSalaryTemplateDetails\HrmSalaryTemplateDetailsIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\HRM\HrmSalaryTemplateDetails\HrmSalaryTemplateDetailsDialog.ts" />
-    <TypeScriptCompile Include="Modules\HRM\HrmSalaryTemplateDetails\HrmSalaryTemplateDetailsGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\HRM.HrmSalaryTemplateDetailsForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Default.DailyAttendanceRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1833,61 +1701,6 @@
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRow.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRepository.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionEndpoint.cs" />
-    <Compile Include="Modules\HRM\AmsAttenance\AmsAttenanceRow.cs" />
-    <Compile Include="Modules\HRM\AmsAttenance\AmsAttenanceRepository.cs" />
-    <Compile Include="Modules\HRM\AmsAttenance\AmsAttenanceEndpoint.cs" />
-    <Compile Include="Modules\HRM\AmsAttenance\AmsAttenancePage.cs" />
-    <Compile Include="Modules\HRM\AmsAttenance\AmsAttenanceColumns.cs" />
-    <Compile Include="Modules\HRM\AmsAttenance\AmsAttenanceForm.cs" />
-    <Compile Include="Modules\HRM\HRMNavigation.cs" />
-    <Compile Include="Modules\HRM\PrmDesignation\PrmDesignationRow.cs" />
-    <Compile Include="Modules\HRM\PrmDesignation\PrmDesignationRepository.cs" />
-    <Compile Include="Modules\HRM\PrmDesignation\PrmDesignationEndpoint.cs" />
-    <Compile Include="Modules\HRM\PrmDesignation\PrmDesignationPage.cs" />
-    <Compile Include="Modules\HRM\PrmDesignation\PrmDesignationColumns.cs" />
-    <Compile Include="Modules\HRM\PrmDesignation\PrmDesignationForm.cs" />
-    <Compile Include="Modules\HRM\PrmEmploymentInfo\PrmEmploymentInfoRow.cs" />
-    <Compile Include="Modules\HRM\PrmEmploymentInfo\PrmEmploymentInfoRepository.cs" />
-    <Compile Include="Modules\HRM\PrmEmploymentInfo\PrmEmploymentInfoEndpoint.cs" />
-    <Compile Include="Modules\HRM\PrmEmploymentInfo\PrmEmploymentInfoPage.cs" />
-    <Compile Include="Modules\HRM\PrmEmploymentInfo\PrmEmploymentInfoColumns.cs" />
-    <Compile Include="Modules\HRM\PrmEmploymentInfo\PrmEmploymentInfoForm.cs" />
-    <Compile Include="Modules\HRM\HrmEmployeeSalary\HrmEmployeeSalaryRow.cs" />
-    <Compile Include="Modules\HRM\HrmEmployeeSalary\HrmEmployeeSalaryRepository.cs" />
-    <Compile Include="Modules\HRM\HrmEmployeeSalary\HrmEmployeeSalaryEndpoint.cs" />
-    <Compile Include="Modules\HRM\HrmEmployeeSalary\HrmEmployeeSalaryPage.cs" />
-    <Compile Include="Modules\HRM\HrmEmployeeSalary\HrmEmployeeSalaryColumns.cs" />
-    <Compile Include="Modules\HRM\HrmEmployeeSalary\HrmEmployeeSalaryForm.cs" />
-    <Compile Include="Modules\HRM\HrmEmployeeSalaryDetails\HrmEmployeeSalaryDetailsRow.cs" />
-    <Compile Include="Modules\HRM\HrmEmployeeSalaryDetails\HrmEmployeeSalaryDetailsRepository.cs" />
-    <Compile Include="Modules\HRM\HrmEmployeeSalaryDetails\HrmEmployeeSalaryDetailsEndpoint.cs" />
-    <Compile Include="Modules\HRM\HrmEmployeeSalaryDetails\HrmEmployeeSalaryDetailsPage.cs" />
-    <Compile Include="Modules\HRM\HrmEmployeeSalaryDetails\HrmEmployeeSalaryDetailsColumns.cs" />
-    <Compile Include="Modules\HRM\HrmEmployeeSalaryDetails\HrmEmployeeSalaryDetailsForm.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryComponent\HrmSalaryComponentRow.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryComponent\HrmSalaryComponentRepository.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryComponent\HrmSalaryComponentEndpoint.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryComponent\HrmSalaryComponentPage.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryComponent\HrmSalaryComponentColumns.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryComponent\HrmSalaryComponentForm.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryProcess\HrmSalaryProcessRow.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryProcess\HrmSalaryProcessRepository.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryProcess\HrmSalaryProcessEndpoint.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryProcess\HrmSalaryProcessPage.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryProcess\HrmSalaryProcessColumns.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryProcess\HrmSalaryProcessForm.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryTemplate\HrmSalaryTemplateRow.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryTemplate\HrmSalaryTemplateRepository.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryTemplate\HrmSalaryTemplateEndpoint.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryTemplate\HrmSalaryTemplatePage.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryTemplate\HrmSalaryTemplateColumns.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryTemplate\HrmSalaryTemplateForm.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryTemplateDetails\HrmSalaryTemplateDetailsRow.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryTemplateDetails\HrmSalaryTemplateDetailsRepository.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryTemplateDetails\HrmSalaryTemplateDetailsEndpoint.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryTemplateDetails\HrmSalaryTemplateDetailsPage.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryTemplateDetails\HrmSalaryTemplateDetailsColumns.cs" />
-    <Compile Include="Modules\HRM\HrmSalaryTemplateDetails\HrmSalaryTemplateDetailsForm.cs" />
     <Compile Include="Modules\Default\DailyAttendance\DailyAttendanceRow.cs" />
     <Compile Include="Modules\Default\DailyAttendance\DailyAttendanceRepository.cs" />
     <Compile Include="Modules\Default\DailyAttendance\DailyAttendanceEndpoint.cs" />

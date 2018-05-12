@@ -1,22 +1,29 @@
-﻿
-namespace SereneCustomize.Default {
-    export class DailyAttendanceForm extends Serenity.PrefixedContext {
-        static formKey = 'Default.DailyAttendance';
-    }
-
+﻿namespace SereneCustomize.Default {
     export interface DailyAttendanceForm {
         UserId: Serenity.IntegerEditor;
         AttendanceDate: Serenity.DateEditor;
     }
 
-    [,
-        ['UserId', () => Serenity.IntegerEditor],
-        ['AttendanceDate', () => Serenity.DateEditor]
-    ].forEach(x => Object.defineProperty(DailyAttendanceForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class DailyAttendanceForm extends Serenity.PrefixedContext {
+        static formKey = 'Default.DailyAttendance';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!DailyAttendanceForm.init)  {
+                DailyAttendanceForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.IntegerEditor;
+                var w1 = s.DateEditor;
+
+                Q.initFormType(DailyAttendanceForm, [
+                    'UserId', w0,
+                    'AttendanceDate', w1
+                ]);
+            }
+        }
+    }
 }
+

@@ -1,5 +1,4 @@
-﻿
-namespace SereneCustomize.Default {
+﻿namespace SereneCustomize.Default {
     export interface DailyAttendanceRow {
         Id?: number;
         UserId?: number;
@@ -23,42 +22,24 @@ namespace SereneCustomize.Default {
         export const idProperty = 'Id';
         export const localTextPrefix = 'Default.DailyAttendance';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const UserId;
-            export declare const AttendanceDate;
-            export declare const UserUsername;
-            export declare const UserDisplayName;
-            export declare const UserEmail;
-            export declare const UserSource;
-            export declare const UserPasswordHash;
-            export declare const UserPasswordSalt;
-            export declare const UserLastDirectoryUpdate;
-            export declare const UserUserImage;
-            export declare const UserInsertDate;
-            export declare const UserInsertUserId;
-            export declare const UserUpdateDate;
-            export declare const UserUpdateUserId;
-            export declare const UserIsActive;
+        export declare const enum Fields {
+            Id = "Id",
+            UserId = "UserId",
+            AttendanceDate = "AttendanceDate",
+            UserUsername = "UserUsername",
+            UserDisplayName = "UserDisplayName",
+            UserEmail = "UserEmail",
+            UserSource = "UserSource",
+            UserPasswordHash = "UserPasswordHash",
+            UserPasswordSalt = "UserPasswordSalt",
+            UserLastDirectoryUpdate = "UserLastDirectoryUpdate",
+            UserUserImage = "UserUserImage",
+            UserInsertDate = "UserInsertDate",
+            UserInsertUserId = "UserInsertUserId",
+            UserUpdateDate = "UserUpdateDate",
+            UserUpdateUserId = "UserUpdateUserId",
+            UserIsActive = "UserIsActive"
         }
-
-        [
-            'Id',
-            'UserId',
-            'AttendanceDate',
-            'UserUsername',
-            'UserDisplayName',
-            'UserEmail',
-            'UserSource',
-            'UserPasswordHash',
-            'UserPasswordSalt',
-            'UserLastDirectoryUpdate',
-            'UserUserImage',
-            'UserInsertDate',
-            'UserInsertUserId',
-            'UserUpdateDate',
-            'UserUpdateUserId',
-            'UserIsActive'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+
