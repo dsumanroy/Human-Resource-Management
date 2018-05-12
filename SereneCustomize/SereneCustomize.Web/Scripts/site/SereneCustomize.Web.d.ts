@@ -1,4 +1,4 @@
-ï»¿/// <reference types="jquery" />
+﻿/// <reference types="jquery" />
 /// <reference types="jqueryui" />
 declare namespace SereneCustomize.Administration {
 }
@@ -493,12 +493,16 @@ declare namespace SereneCustomize.Default {
     }
 }
 declare namespace SereneCustomize.Default {
-    class DesignationForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace SereneCustomize.Default {
     interface DesignationForm {
         Name: Serenity.StringEditor;
         Remarks: Serenity.StringEditor;
+    }
+    class DesignationForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace SereneCustomize.Default {
@@ -511,10 +515,10 @@ declare namespace SereneCustomize.Default {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "Default.Designation";
-        namespace Fields {
-            const Id: any;
-            const Name: any;
-            const Remarks: any;
+        const enum Fields {
+            Id = "Id",
+            Name = "Name",
+            Remarks = "Remarks",
         }
     }
 }
@@ -526,12 +530,105 @@ declare namespace SereneCustomize.Default {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DesignationRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DesignationRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Default/Designation/Create",
+            Update = "Default/Designation/Update",
+            Delete = "Default/Designation/Delete",
+            Retrieve = "Default/Designation/Retrieve",
+            List = "Default/Designation/List",
+        }
+    }
+}
+declare namespace SereneCustomize.Default {
+}
+declare namespace SereneCustomize.Default {
+    interface EmployeeForm {
+        Username: Serenity.StringEditor;
+        DisplayName: Serenity.StringEditor;
+        Email: Serenity.StringEditor;
+        Source: Serenity.StringEditor;
+        PasswordHash: Serenity.StringEditor;
+        PasswordSalt: Serenity.StringEditor;
+        LastDirectoryUpdate: Serenity.DateEditor;
+        UserImage: Serenity.StringEditor;
+        InsertDate: Serenity.DateEditor;
+        InsertUserId: Serenity.IntegerEditor;
+        UpdateDate: Serenity.DateEditor;
+        UpdateUserId: Serenity.IntegerEditor;
+        IsActive: Serenity.IntegerEditor;
+        DesignationId: Serenity.StringEditor;
+        BirthDate: Serenity.DateEditor;
+        Gender: Serenity.StringEditor;
+    }
+    class EmployeeForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace SereneCustomize.Default {
+    interface EmployeeRow {
+        UserId?: number;
+        Username?: string;
+        DisplayName?: string;
+        Email?: string;
+        Source?: string;
+        PasswordHash?: string;
+        PasswordSalt?: string;
+        LastDirectoryUpdate?: string;
+        UserImage?: string;
+        InsertDate?: string;
+        InsertUserId?: number;
+        UpdateDate?: string;
+        UpdateUserId?: number;
+        IsActive?: number;
+        DesignationId?: number;
+        BirthDate?: string;
+        Gender?: string;
+        DesignationName?: string;
+        DesignationRemarks?: string;
+    }
+    namespace EmployeeRow {
+        const idProperty = "UserId";
+        const nameProperty = "Username";
+        const localTextPrefix = "Default.Employee";
+        const enum Fields {
+            UserId = "UserId",
+            Username = "Username",
+            DisplayName = "DisplayName",
+            Email = "Email",
+            Source = "Source",
+            PasswordHash = "PasswordHash",
+            PasswordSalt = "PasswordSalt",
+            LastDirectoryUpdate = "LastDirectoryUpdate",
+            UserImage = "UserImage",
+            InsertDate = "InsertDate",
+            InsertUserId = "InsertUserId",
+            UpdateDate = "UpdateDate",
+            UpdateUserId = "UpdateUserId",
+            IsActive = "IsActive",
+            DesignationId = "DesignationId",
+            BirthDate = "BirthDate",
+            Gender = "Gender",
+            DesignationName = "DesignationName",
+            DesignationRemarks = "DesignationRemarks",
+        }
+    }
+}
+declare namespace SereneCustomize.Default {
+    namespace EmployeeService {
+        const baseUrl = "Default/Employee";
+        function Create(request: Serenity.SaveRequest<EmployeeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<EmployeeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<EmployeeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<EmployeeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Default/Employee/Create",
+            Update = "Default/Employee/Update",
+            Delete = "Default/Employee/Delete",
+            Retrieve = "Default/Employee/Retrieve",
+            List = "Default/Employee/List",
         }
     }
 }
@@ -663,11 +760,6 @@ declare namespace SereneCustomize {
         strClockTime?: string;
     }
 }
-declare namespace SereneCustomize.LanguageList {
-    function getValue(): string[][];
-}
-declare namespace SereneCustomize.ScriptInitialization {
-}
 declare namespace SereneCustomize.Administration {
     class LanguageDialog extends Serenity.EntityDialog<LanguageRow, any> {
         protected getFormKey(): string;
@@ -773,6 +865,10 @@ declare namespace SereneCustomize.Administration {
         protected getDefaultSortBy(): UserRow.Fields[];
     }
 }
+declare namespace SereneCustomize.Authorization {
+    let userDefinition: ScriptUserDefinition;
+    function hasPermission(permissionKey: string): boolean;
+}
 declare namespace SereneCustomize.Administration {
     class PermissionCheckEditor extends Serenity.DataGrid<PermissionCheckItem, PermissionCheckEditorOptions> {
         protected getIdProperty(): string;
@@ -843,6 +939,11 @@ declare namespace SereneCustomize.Administration {
         userID: number;
         username: string;
     }
+}
+declare namespace SereneCustomize.LanguageList {
+    function getValue(): string[][];
+}
+declare namespace SereneCustomize.ScriptInitialization {
 }
 declare namespace SereneCustomize {
     class BasicProgressDialog extends Serenity.TemplatedDialog<any> {
@@ -1120,9 +1221,27 @@ declare namespace SereneCustomize.Default {
         constructor(container: JQuery);
     }
 }
-declare namespace SereneCustomize.Authorization {
-    let userDefinition: ScriptUserDefinition;
-    function hasPermission(permissionKey: string): boolean;
+declare namespace SereneCustomize.Default {
+    class EmployeeDialog extends Serenity.EntityDialog<EmployeeRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: EmployeeForm;
+        constructor();
+    }
+}
+declare namespace SereneCustomize.Default {
+    class EmployeeGrid extends Serenity.EntityGrid<EmployeeRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof EmployeeDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+    }
 }
 declare namespace SereneCustomize.Membership {
     class ChangePasswordPanel extends Serenity.PropertyPanel<ChangePasswordRequest, any> {

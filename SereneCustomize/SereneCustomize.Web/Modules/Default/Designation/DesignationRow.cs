@@ -11,8 +11,11 @@ namespace SereneCustomize.Default.Entities
 
     [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Designation]")]
     [DisplayName("Designation"), InstanceName("Designation")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission("HRM:Designation:Read")]
+    [InsertPermission("HRM:Designation:Insert")]
+    [UpdatePermission("HRM:Designation:Update")]
+    [DeletePermission("HRM:Designation:Delete")]
+    [LookupScript]
     public sealed class DesignationRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]

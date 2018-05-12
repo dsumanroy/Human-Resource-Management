@@ -1325,6 +1325,12 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Default.DailyAttendanceColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.DesignationColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.EmployeeColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Common\Helpers\StaticTextBlock.ts" />
     <TypeScriptCompile Include="Modules\Administration\Language\LanguageDialog.ts" />
     <TypeScriptCompile Include="Modules\Administration\Language\LanguageGrid.ts" />
@@ -1567,12 +1573,30 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <Content Include="Content\site\site.default.less" />
-    <TypeScriptCompile Include="Imports\ServerTypings\Default.DesignationRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Default.DesignationService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.DesignationRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.DesignationService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <Content Include="Modules\Default\Designation\DesignationIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Default\Designation\DesignationDialog.ts" />
     <TypeScriptCompile Include="Modules\Default\Designation\DesignationGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\Default.DesignationForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.DesignationForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.EmployeeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.EmployeeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Default\Employee\EmployeeIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Default\Employee\EmployeeDialog.ts" />
+    <TypeScriptCompile Include="Modules\Default\Employee\EmployeeGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.EmployeeForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1721,6 +1745,12 @@
     <Compile Include="Modules\Default\Designation\DesignationPage.cs" />
     <Compile Include="Modules\Default\Designation\DesignationColumns.cs" />
     <Compile Include="Modules\Default\Designation\DesignationForm.cs" />
+    <Compile Include="Modules\Default\Employee\EmployeeRow.cs" />
+    <Compile Include="Modules\Default\Employee\EmployeeRepository.cs" />
+    <Compile Include="Modules\Default\Employee\EmployeeEndpoint.cs" />
+    <Compile Include="Modules\Default\Employee\EmployeePage.cs" />
+    <Compile Include="Modules\Default\Employee\EmployeeColumns.cs" />
+    <Compile Include="Modules\Default\Employee\EmployeeForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

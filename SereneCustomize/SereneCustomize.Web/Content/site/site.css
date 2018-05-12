@@ -7470,3 +7470,9 @@ section.content > .s-DataGrid {
 .s-Default-DesignationDialog .caption {
   width: 150px;
 }
+.s-Default-EmployeeDialog > .size {
+  width: 650px;
+}
+.s-Default-EmployeeDialog .caption {
+  width: 150px;
+}

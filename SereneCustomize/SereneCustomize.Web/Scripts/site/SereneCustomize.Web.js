@@ -1,4 +1,4 @@
-var SereneCustomize;
+﻿var SereneCustomize;
 (function (SereneCustomize) {
     var Administration;
     (function (Administration) {
@@ -400,23 +400,23 @@ var SereneCustomize;
     (function (Default) {
         var DesignationForm = /** @class */ (function (_super) {
             __extends(DesignationForm, _super);
-            function DesignationForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function DesignationForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!DesignationForm.init) {
+                    DesignationForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    Q.initFormType(DesignationForm, [
+                        'Name', w0,
+                        'Remarks', w0
+                    ]);
+                }
+                return _this;
             }
             DesignationForm.formKey = 'Default.Designation';
             return DesignationForm;
         }(Serenity.PrefixedContext));
         Default.DesignationForm = DesignationForm;
-        [,
-            ['Name', function () { return Serenity.StringEditor; }],
-            ['Remarks', function () { return Serenity.StringEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(DesignationForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
 })(SereneCustomize || (SereneCustomize = {}));
 var SereneCustomize;
@@ -428,14 +428,6 @@ var SereneCustomize;
             DesignationRow.idProperty = 'Id';
             DesignationRow.nameProperty = 'Name';
             DesignationRow.localTextPrefix = 'Default.Designation';
-            var Fields;
-            (function (Fields) {
-            })(Fields = DesignationRow.Fields || (DesignationRow.Fields = {}));
-            [
-                'Id',
-                'Name',
-                'Remarks'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(DesignationRow = Default.DesignationRow || (Default.DesignationRow = {}));
     })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
 })(SereneCustomize || (SereneCustomize = {}));
@@ -446,9 +438,6 @@ var SereneCustomize;
         var DesignationService;
         (function (DesignationService) {
             DesignationService.baseUrl = 'Default/Designation';
-            var Methods;
-            (function (Methods) {
-            })(Methods = DesignationService.Methods || (DesignationService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -459,9 +448,82 @@ var SereneCustomize;
                 DesignationService[x] = function (r, s, o) {
                     return Q.serviceRequest(DesignationService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = DesignationService.baseUrl + '/' + x;
             });
         })(DesignationService = Default.DesignationService || (Default.DesignationService = {}));
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
+    var Default;
+    (function (Default) {
+        var EmployeeForm = /** @class */ (function (_super) {
+            __extends(EmployeeForm, _super);
+            function EmployeeForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!EmployeeForm.init) {
+                    EmployeeForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DateEditor;
+                    var w2 = s.IntegerEditor;
+                    Q.initFormType(EmployeeForm, [
+                        'Username', w0,
+                        'DisplayName', w0,
+                        'Email', w0,
+                        'Source', w0,
+                        'PasswordHash', w0,
+                        'PasswordSalt', w0,
+                        'LastDirectoryUpdate', w1,
+                        'UserImage', w0,
+                        'InsertDate', w1,
+                        'InsertUserId', w2,
+                        'UpdateDate', w1,
+                        'UpdateUserId', w2,
+                        'IsActive', w2,
+                        'DesignationId', w0,
+                        'BirthDate', w1,
+                        'Gender', w0
+                    ]);
+                }
+                return _this;
+            }
+            EmployeeForm.formKey = 'Default.Employee';
+            return EmployeeForm;
+        }(Serenity.PrefixedContext));
+        Default.EmployeeForm = EmployeeForm;
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
+    var Default;
+    (function (Default) {
+        var EmployeeRow;
+        (function (EmployeeRow) {
+            EmployeeRow.idProperty = 'UserId';
+            EmployeeRow.nameProperty = 'Username';
+            EmployeeRow.localTextPrefix = 'Default.Employee';
+        })(EmployeeRow = Default.EmployeeRow || (Default.EmployeeRow = {}));
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
+    var Default;
+    (function (Default) {
+        var EmployeeService;
+        (function (EmployeeService) {
+            EmployeeService.baseUrl = 'Default/Employee';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                EmployeeService[x] = function (r, s, o) {
+                    return Q.serviceRequest(EmployeeService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(EmployeeService = Default.EmployeeService || (Default.EmployeeService = {}));
     })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
 })(SereneCustomize || (SereneCustomize = {}));
 var SereneCustomize;
@@ -594,38 +656,6 @@ var SereneCustomize;
         }(Serenity.PrefixedContext));
         Membership.SignUpForm = SignUpForm;
     })(Membership = SereneCustomize.Membership || (SereneCustomize.Membership = {}));
-})(SereneCustomize || (SereneCustomize = {}));
-var SereneCustomize;
-(function (SereneCustomize) {
-    var LanguageList;
-    (function (LanguageList) {
-        function getValue() {
-            var result = [];
-            for (var _i = 0, _a = SereneCustomize.Administration.LanguageRow.getLookup().items; _i < _a.length; _i++) {
-                var k = _a[_i];
-                if (k.LanguageId !== 'en') {
-                    result.push([k.Id.toString(), k.LanguageName]);
-                }
-            }
-            return result;
-        }
-        LanguageList.getValue = getValue;
-    })(LanguageList = SereneCustomize.LanguageList || (SereneCustomize.LanguageList = {}));
-})(SereneCustomize || (SereneCustomize = {}));
-/// <reference path="../Common/Helpers/LanguageList.ts" />
-var SereneCustomize;
-(function (SereneCustomize) {
-    var ScriptInitialization;
-    (function (ScriptInitialization) {
-        Q.Config.responsiveDialogs = true;
-        Q.Config.rootNamespaces.push('SereneCustomize');
-        Serenity.EntityDialog.defaultLanguageList = SereneCustomize.LanguageList.getValue;
-        if ($.fn['colorbox']) {
-            $.fn['colorbox'].settings.maxWidth = "95%";
-            $.fn['colorbox'].settings.maxHeight = "95%";
-        }
-        window.onerror = Q.ErrorHandling.runtimeErrorHandler;
-    })(ScriptInitialization = SereneCustomize.ScriptInitialization || (SereneCustomize.ScriptInitialization = {}));
 })(SereneCustomize || (SereneCustomize = {}));
 var SereneCustomize;
 (function (SereneCustomize) {
@@ -1100,6 +1130,22 @@ var SereneCustomize;
 })(SereneCustomize || (SereneCustomize = {}));
 var SereneCustomize;
 (function (SereneCustomize) {
+    var Authorization;
+    (function (Authorization) {
+        Object.defineProperty(Authorization, 'userDefinition', {
+            get: function () {
+                return Q.getRemoteData('UserData');
+            }
+        });
+        function hasPermission(permissionKey) {
+            var ud = Authorization.userDefinition;
+            return ud.Username === 'admin' || !!ud.Permissions[permissionKey];
+        }
+        Authorization.hasPermission = hasPermission;
+    })(Authorization = SereneCustomize.Authorization || (SereneCustomize.Authorization = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
     var Administration;
     (function (Administration) {
         var PermissionCheckEditor = /** @class */ (function (_super) {
@@ -1569,6 +1615,38 @@ var SereneCustomize;
         }(Serenity.TemplatedDialog));
         Administration.UserRoleDialog = UserRoleDialog;
     })(Administration = SereneCustomize.Administration || (SereneCustomize.Administration = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
+    var LanguageList;
+    (function (LanguageList) {
+        function getValue() {
+            var result = [];
+            for (var _i = 0, _a = SereneCustomize.Administration.LanguageRow.getLookup().items; _i < _a.length; _i++) {
+                var k = _a[_i];
+                if (k.LanguageId !== 'en') {
+                    result.push([k.Id.toString(), k.LanguageName]);
+                }
+            }
+            return result;
+        }
+        LanguageList.getValue = getValue;
+    })(LanguageList = SereneCustomize.LanguageList || (SereneCustomize.LanguageList = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+/// <reference path="../Common/Helpers/LanguageList.ts" />
+var SereneCustomize;
+(function (SereneCustomize) {
+    var ScriptInitialization;
+    (function (ScriptInitialization) {
+        Q.Config.responsiveDialogs = true;
+        Q.Config.rootNamespaces.push('SereneCustomize');
+        Serenity.EntityDialog.defaultLanguageList = SereneCustomize.LanguageList.getValue;
+        if ($.fn['colorbox']) {
+            $.fn['colorbox'].settings.maxWidth = "95%";
+            $.fn['colorbox'].settings.maxHeight = "95%";
+        }
+        window.onerror = Q.ErrorHandling.runtimeErrorHandler;
+    })(ScriptInitialization = SereneCustomize.ScriptInitialization || (SereneCustomize.ScriptInitialization = {}));
 })(SereneCustomize || (SereneCustomize = {}));
 var SereneCustomize;
 (function (SereneCustomize) {
@@ -2804,19 +2882,58 @@ var SereneCustomize;
 })(SereneCustomize || (SereneCustomize = {}));
 var SereneCustomize;
 (function (SereneCustomize) {
-    var Authorization;
-    (function (Authorization) {
-        Object.defineProperty(Authorization, 'userDefinition', {
-            get: function () {
-                return Q.getRemoteData('UserData');
+    var Default;
+    (function (Default) {
+        var EmployeeDialog = /** @class */ (function (_super) {
+            __extends(EmployeeDialog, _super);
+            function EmployeeDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new Default.EmployeeForm(_this.idPrefix);
+                return _this;
             }
-        });
-        function hasPermission(permissionKey) {
-            var ud = Authorization.userDefinition;
-            return ud.Username === 'admin' || !!ud.Permissions[permissionKey];
-        }
-        Authorization.hasPermission = hasPermission;
-    })(Authorization = SereneCustomize.Authorization || (SereneCustomize.Authorization = {}));
+            EmployeeDialog.prototype.getFormKey = function () { return Default.EmployeeForm.formKey; };
+            EmployeeDialog.prototype.getIdProperty = function () { return Default.EmployeeRow.idProperty; };
+            EmployeeDialog.prototype.getLocalTextPrefix = function () { return Default.EmployeeRow.localTextPrefix; };
+            EmployeeDialog.prototype.getNameProperty = function () { return Default.EmployeeRow.nameProperty; };
+            EmployeeDialog.prototype.getService = function () { return Default.EmployeeService.baseUrl; };
+            EmployeeDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.panel()
+            ], EmployeeDialog);
+            return EmployeeDialog;
+        }(Serenity.EntityDialog));
+        Default.EmployeeDialog = EmployeeDialog;
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
+    var Default;
+    (function (Default) {
+        var EmployeeGrid = /** @class */ (function (_super) {
+            __extends(EmployeeGrid, _super);
+            function EmployeeGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            EmployeeGrid.prototype.getColumnsKey = function () { return 'Default.Employee'; };
+            EmployeeGrid.prototype.getDialogType = function () { return Default.EmployeeDialog; };
+            EmployeeGrid.prototype.getIdProperty = function () { return Default.EmployeeRow.idProperty; };
+            EmployeeGrid.prototype.getLocalTextPrefix = function () { return Default.EmployeeRow.localTextPrefix; };
+            EmployeeGrid.prototype.getService = function () { return Default.EmployeeService.baseUrl; };
+            EmployeeGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                var hasInsertPermission = SereneCustomize.Authorization.hasPermission('HRM:Employee:Insert');
+                if (!hasInsertPermission) {
+                    buttons.splice(0, 1);
+                }
+                return buttons;
+            };
+            EmployeeGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], EmployeeGrid);
+            return EmployeeGrid;
+        }(Serenity.EntityGrid));
+        Default.EmployeeGrid = EmployeeGrid;
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
 })(SereneCustomize || (SereneCustomize = {}));
 var SereneCustomize;
 (function (SereneCustomize) {

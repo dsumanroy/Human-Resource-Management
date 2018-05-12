@@ -1,22 +1,28 @@
-﻿
-namespace SereneCustomize.Default {
-    export class DesignationForm extends Serenity.PrefixedContext {
-        static formKey = 'Default.Designation';
-    }
-
+﻿namespace SereneCustomize.Default {
     export interface DesignationForm {
         Name: Serenity.StringEditor;
         Remarks: Serenity.StringEditor;
     }
 
-    [,
-        ['Name', () => Serenity.StringEditor],
-        ['Remarks', () => Serenity.StringEditor]
-    ].forEach(x => Object.defineProperty(DesignationForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class DesignationForm extends Serenity.PrefixedContext {
+        static formKey = 'Default.Designation';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!DesignationForm.init)  {
+                DesignationForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.StringEditor;
+
+                Q.initFormType(DesignationForm, [
+                    'Name', w0,
+                    'Remarks', w0
+                ]);
+            }
+        }
+    }
 }
+

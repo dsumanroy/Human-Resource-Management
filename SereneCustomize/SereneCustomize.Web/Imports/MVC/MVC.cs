@@ -48,6 +48,16 @@ namespace MVC
             {
                 public const string DailyAttendanceIndex = "~/Modules/Default/DailyAttendance/DailyAttendanceIndex.cshtml";
             }
+
+            public static class Designation
+            {
+                public const string DesignationIndex = "~/Modules/Default/Designation/DesignationIndex.cshtml";
+            }
+
+            public static class Employee
+            {
+                public const string EmployeeIndex = "~/Modules/Default/Employee/EmployeeIndex.cshtml";
+            }
         }
 
         public static class Errors
