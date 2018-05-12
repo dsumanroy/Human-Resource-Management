@@ -1,4 +1,4 @@
-﻿/// <reference types="jquery" />
+ï»¿/// <reference types="jquery" />
 /// <reference types="jqueryui" />
 declare namespace SereneCustomize.Administration {
 }
@@ -416,6 +416,74 @@ declare namespace SereneCustomize.Common {
         PreferenceType?: string;
         Name?: string;
         Value?: string;
+    }
+}
+declare namespace SereneCustomize.Default {
+    class DailyAttendanceForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface DailyAttendanceForm {
+        UserId: Serenity.IntegerEditor;
+        AttendanceDate: Serenity.DateEditor;
+    }
+}
+declare namespace SereneCustomize.Default {
+    interface DailyAttendanceRow {
+        Id?: number;
+        UserId?: number;
+        AttendanceDate?: string;
+        UserUsername?: string;
+        UserDisplayName?: string;
+        UserEmail?: string;
+        UserSource?: string;
+        UserPasswordHash?: string;
+        UserPasswordSalt?: string;
+        UserLastDirectoryUpdate?: string;
+        UserUserImage?: string;
+        UserInsertDate?: string;
+        UserInsertUserId?: number;
+        UserUpdateDate?: string;
+        UserUpdateUserId?: number;
+        UserIsActive?: number;
+    }
+    namespace DailyAttendanceRow {
+        const idProperty = "Id";
+        const localTextPrefix = "Default.DailyAttendance";
+        namespace Fields {
+            const Id: any;
+            const UserId: any;
+            const AttendanceDate: any;
+            const UserUsername: any;
+            const UserDisplayName: any;
+            const UserEmail: any;
+            const UserSource: any;
+            const UserPasswordHash: any;
+            const UserPasswordSalt: any;
+            const UserLastDirectoryUpdate: any;
+            const UserUserImage: any;
+            const UserInsertDate: any;
+            const UserInsertUserId: any;
+            const UserUpdateDate: any;
+            const UserUpdateUserId: any;
+            const UserIsActive: any;
+        }
+    }
+}
+declare namespace SereneCustomize.Default {
+    namespace DailyAttendanceService {
+        const baseUrl = "Default/DailyAttendance";
+        function Create(request: Serenity.SaveRequest<DailyAttendanceRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DailyAttendanceRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DailyAttendanceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DailyAttendanceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
     }
 }
 declare namespace SereneCustomize {
@@ -1528,6 +1596,25 @@ declare namespace SereneCustomize.Common {
     class UserPreferenceStorage implements Serenity.SettingStorage {
         getItem(key: string): string;
         setItem(key: string, data: string): void;
+    }
+}
+declare namespace SereneCustomize.Default {
+    class DailyAttendanceDialog extends Serenity.EntityDialog<DailyAttendanceRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        protected form: DailyAttendanceForm;
+    }
+}
+declare namespace SereneCustomize.Default {
+    class DailyAttendanceGrid extends Serenity.EntityGrid<DailyAttendanceRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof DailyAttendanceDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace SereneCustomize.HRM {

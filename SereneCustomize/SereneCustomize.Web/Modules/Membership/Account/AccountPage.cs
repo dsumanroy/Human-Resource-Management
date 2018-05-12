@@ -50,8 +50,16 @@ namespace SereneCustomize.Membership.Pages
 
                 if (WebSecurityHelper.Authenticate(ref username, request.Password, false))
                 {
-                    var dd = SqlConnections.NewFor<AmsAttenanceRow>();
-                   // var uId = dd.TryFirst<UserRow>().UserId;
+                    var dd = SqlConnections.NewFor<UserRow>();
+                    var uId = dd.TryFirst<UserRow>(UserRow.Fields.Username == username)?.UserId;
+
+                    var amsC = SqlConnections.NewFor<AmsAttenanceRow>();
+                    var uow = new UnitOfWork(amsC);
+                    new AmsAttenanceRepository().Create(uow, new SaveRequest<AmsAttenanceRow> { Entity = new HRM.Entities.AmsAttenanceRow { EmployeeId = uId, AttendanceDate = DateTime.Now } });
+                    //  var userrole = dd.TryFirst<Administration.Entities.UserRow>(new Criteria(Administration.Entities.UserRow.Fields.Username) == username);
+                    dd.Close();
+                    uow.Commit();
+                    amsC.Close();
                     return new ServiceResponse();
                 }
                 throw new ValidationError("AuthenticationError", Texts.Validation.AuthenticationError);

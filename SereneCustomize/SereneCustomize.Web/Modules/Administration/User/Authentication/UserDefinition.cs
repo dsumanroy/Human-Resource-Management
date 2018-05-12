@@ -19,6 +19,7 @@
         public DateTime? UpdateDate { get; set; }
         public DateTime? LastDirectoryUpdate { get; set; }
 
+        public Boolean IsClockIn { get; set; }
         public string ClockButtonText { get; set; }
         public DateTime? ClockTime { get; set; }
         public String strClockTime { get; set; }

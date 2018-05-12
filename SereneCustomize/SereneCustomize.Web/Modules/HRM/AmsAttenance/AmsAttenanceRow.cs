@@ -11,8 +11,8 @@ namespace SereneCustomize.HRM.Entities
 
     [ConnectionKey("HRM"), Module("HRM"), TableName("[dbo].[AMS_Attenance]")]
     [DisplayName("Ams Attenance"), InstanceName("Ams Attenance")]
-    [ReadPermission("?")]
-    [ModifyPermission("?")]
+    [ReadPermission("*")]
+    [ModifyPermission("*")]
     public sealed class AmsAttenanceRow : Row, IIdRow
     {
         [DisplayName("Id"), Identity]

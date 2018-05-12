@@ -7458,3 +7458,9 @@ section.content > .s-DataGrid {
 .s-HRM-HrmSalaryTemplateDetailsDialog .caption {
   width: 150px;
 }
+.s-Default-DailyAttendanceDialog > .size {
+  width: 650px;
+}
+.s-Default-DailyAttendanceDialog .caption {
+  width: 150px;
+}

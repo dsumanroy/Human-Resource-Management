@@ -16,6 +16,7 @@
         public Boolean IsAdmin { get; set; }
         public Dictionary<string, bool> Permissions { get; set; }
 
+        public Boolean IsClockIn { get; set; }
         public string ClockButtonText { get; set; }
         public DateTime? ClockTime { get; set; }
         public String strClockTime { get; set; }

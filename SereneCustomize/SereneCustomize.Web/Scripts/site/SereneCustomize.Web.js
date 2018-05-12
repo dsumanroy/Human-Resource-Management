@@ -1,4 +1,4 @@
-﻿var SereneCustomize;
+ï»¿var SereneCustomize;
 (function (SereneCustomize) {
     var Administration;
     (function (Administration) {
@@ -334,6 +334,88 @@ var SereneCustomize;
             });
         })(UserPreferenceService = Common.UserPreferenceService || (Common.UserPreferenceService = {}));
     })(Common = SereneCustomize.Common || (SereneCustomize.Common = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
+    var Default;
+    (function (Default) {
+        var DailyAttendanceForm = /** @class */ (function (_super) {
+            __extends(DailyAttendanceForm, _super);
+            function DailyAttendanceForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            DailyAttendanceForm.formKey = 'Default.DailyAttendance';
+            return DailyAttendanceForm;
+        }(Serenity.PrefixedContext));
+        Default.DailyAttendanceForm = DailyAttendanceForm;
+        [,
+            ['UserId', function () { return Serenity.IntegerEditor; }],
+            ['AttendanceDate', function () { return Serenity.DateEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(DailyAttendanceForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
+    var Default;
+    (function (Default) {
+        var DailyAttendanceRow;
+        (function (DailyAttendanceRow) {
+            DailyAttendanceRow.idProperty = 'Id';
+            DailyAttendanceRow.localTextPrefix = 'Default.DailyAttendance';
+            var Fields;
+            (function (Fields) {
+            })(Fields = DailyAttendanceRow.Fields || (DailyAttendanceRow.Fields = {}));
+            [
+                'Id',
+                'UserId',
+                'AttendanceDate',
+                'UserUsername',
+                'UserDisplayName',
+                'UserEmail',
+                'UserSource',
+                'UserPasswordHash',
+                'UserPasswordSalt',
+                'UserLastDirectoryUpdate',
+                'UserUserImage',
+                'UserInsertDate',
+                'UserInsertUserId',
+                'UserUpdateDate',
+                'UserUpdateUserId',
+                'UserIsActive'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(DailyAttendanceRow = Default.DailyAttendanceRow || (Default.DailyAttendanceRow = {}));
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
+    var Default;
+    (function (Default) {
+        var DailyAttendanceService;
+        (function (DailyAttendanceService) {
+            DailyAttendanceService.baseUrl = 'Default/DailyAttendance';
+            var Methods;
+            (function (Methods) {
+            })(Methods = DailyAttendanceService.Methods || (DailyAttendanceService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                DailyAttendanceService[x] = function (r, s, o) {
+                    return Q.serviceRequest(DailyAttendanceService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = DailyAttendanceService.baseUrl + '/' + x;
+            });
+        })(DailyAttendanceService = Default.DailyAttendanceService || (Default.DailyAttendanceService = {}));
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
 })(SereneCustomize || (SereneCustomize = {}));
 var SereneCustomize;
 (function (SereneCustomize) {
@@ -3127,6 +3209,51 @@ var SereneCustomize;
         }());
         Common.UserPreferenceStorage = UserPreferenceStorage;
     })(Common = SereneCustomize.Common || (SereneCustomize.Common = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
+    var Default;
+    (function (Default) {
+        var DailyAttendanceDialog = /** @class */ (function (_super) {
+            __extends(DailyAttendanceDialog, _super);
+            function DailyAttendanceDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Default.DailyAttendanceForm(_this.idPrefix);
+                return _this;
+            }
+            DailyAttendanceDialog.prototype.getFormKey = function () { return Default.DailyAttendanceForm.formKey; };
+            DailyAttendanceDialog.prototype.getIdProperty = function () { return Default.DailyAttendanceRow.idProperty; };
+            DailyAttendanceDialog.prototype.getLocalTextPrefix = function () { return Default.DailyAttendanceRow.localTextPrefix; };
+            DailyAttendanceDialog.prototype.getService = function () { return Default.DailyAttendanceService.baseUrl; };
+            DailyAttendanceDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DailyAttendanceDialog);
+            return DailyAttendanceDialog;
+        }(Serenity.EntityDialog));
+        Default.DailyAttendanceDialog = DailyAttendanceDialog;
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
+})(SereneCustomize || (SereneCustomize = {}));
+var SereneCustomize;
+(function (SereneCustomize) {
+    var Default;
+    (function (Default) {
+        var DailyAttendanceGrid = /** @class */ (function (_super) {
+            __extends(DailyAttendanceGrid, _super);
+            function DailyAttendanceGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            DailyAttendanceGrid.prototype.getColumnsKey = function () { return 'Default.DailyAttendance'; };
+            DailyAttendanceGrid.prototype.getDialogType = function () { return Default.DailyAttendanceDialog; };
+            DailyAttendanceGrid.prototype.getIdProperty = function () { return Default.DailyAttendanceRow.idProperty; };
+            DailyAttendanceGrid.prototype.getLocalTextPrefix = function () { return Default.DailyAttendanceRow.localTextPrefix; };
+            DailyAttendanceGrid.prototype.getService = function () { return Default.DailyAttendanceService.baseUrl; };
+            DailyAttendanceGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DailyAttendanceGrid);
+            return DailyAttendanceGrid;
+        }(Serenity.EntityGrid));
+        Default.DailyAttendanceGrid = DailyAttendanceGrid;
+    })(Default = SereneCustomize.Default || (SereneCustomize.Default = {}));
 })(SereneCustomize || (SereneCustomize = {}));
 var SereneCustomize;
 (function (SereneCustomize) {

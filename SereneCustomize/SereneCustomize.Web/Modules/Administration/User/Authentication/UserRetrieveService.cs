@@ -28,7 +28,7 @@
                     PasswordSalt = user.PasswordSalt,
                     UpdateDate = user.UpdateDate,
                     LastDirectoryUpdate = user.LastDirectoryUpdate,
-                    ClockButtonText = "Clock In"
+                    IsClockIn=true                    
                 };
 
             return null;
