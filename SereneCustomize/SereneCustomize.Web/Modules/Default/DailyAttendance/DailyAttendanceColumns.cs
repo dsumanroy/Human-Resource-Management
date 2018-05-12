@@ -16,6 +16,7 @@ namespace SereneCustomize.Default.Columns
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int64 Id { get; set; }
         public String UserUsername { get; set; }
+        [Width(250,Min =200)]
         public DateTime AttendanceDate { get; set; }
     }
 }
