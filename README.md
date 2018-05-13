@@ -1,4 +1,4 @@
-# Sample Human Resource Management using Serenity
+# Human Resource Management using Serenity
 
-Learning serenity 
+This project uses
 https://github.com/volkanceylan/Serenity
